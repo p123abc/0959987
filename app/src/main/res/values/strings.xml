@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">PatrickPapineau</string>
     <string name="IDENTIFIANT">Bonjours</string>
+    <string name="lHauteur">Hauteur</string>
+    <string name="lLargeur">Largeur</string>
+    <string name="lPourGagnier">Pour gagnier</string>
 </resources>

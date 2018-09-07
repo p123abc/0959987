@@ -2,4 +2,7 @@
 <resources>
     <string name="app_name">PatrickPapineau</string>
     <string name="IDENTIFIANT">Hello</string>
+    <string name="lHauteur">Height:</string>
+    <string name="lLargeur">Width:</string>
+    <string name="lPourGagnier">To win:</string>
 </resources>
