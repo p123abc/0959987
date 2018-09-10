@@ -28,17 +28,16 @@ public class VMenuPrincipal extends ConstraintLayout {
     public void onFinishInflate(){
         super.onFinishInflate();
 
-        Button buttonParametres = this.findViewById(R.id.button_AParametres);
+        // ICI LA VUE EXISTE
 
-        buttonParametres.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                 Intent monIntention = new Intent(this, AParametres.class);
-                 this.startActivity(monIntention);
-            }
-        });
+
 
     }
+
+
+
+
+
 
 
 

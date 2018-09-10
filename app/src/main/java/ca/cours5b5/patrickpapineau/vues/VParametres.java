@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import ca.cours5b5.patrickpapineau.R;
+import ca.cours5b5.patrickpapineau.global.GConstantes;
 
 public class VParametres extends ConstraintLayout{
 
@@ -30,23 +31,29 @@ public class VParametres extends ConstraintLayout{
         Spinner spinnerLargeur = this.findViewById(R.id.spinnerLargeur);
         Spinner spinnerPourGagnier = this.findViewById(R.id.spinnerPourGagnier);
 
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this.getContext(), R.layout.support_simple_spinner_dropdown_item);
+        ArrayAdapter<Integer> adapterHauteur = new ArrayAdapter<>(this.getContext(), R.layout.support_simple_spinner_dropdown_item);
+        ArrayAdapter<Integer> adapterLargeur = new ArrayAdapter<>(this.getContext(), R.layout.support_simple_spinner_dropdown_item);
         ArrayAdapter<Integer> adapterPG = new ArrayAdapter<>(this.getContext(), R.layout.support_simple_spinner_dropdown_item);
 
-        spinnerHauteur.setAdapter(adapter);
-        spinnerLargeur.setAdapter(adapter);
+        spinnerHauteur.setAdapter(adapterHauteur);
+        spinnerLargeur.setAdapter(adapterLargeur);
         spinnerPourGagnier.setAdapter(adapterPG);
 
-        for (int i = 4; i<11; i++){
-            adapter.add(i);
+        for (int i = GConstantes.HMIN; i<=GConstantes.HMAX; i++){
+            adapterHauteur.add(i);
         }
 
-        adapterPG.add(3);
-        adapterPG.add(4);
+        for (int i = GConstantes.LMIN; i<=GConstantes.LMAX; i++){
+            adapterLargeur.add(i);
+        }
 
-        spinnerHauteur.setSelection(2);
-        spinnerLargeur.setSelection(3);
-        spinnerPourGagnier.setSelection(1);
+        for (int i = GConstantes.PGMIN; i<=GConstantes.PGMAX; i++){
+            adapterPG.add(i);
+        }
+
+        spinnerHauteur.setSelection(GConstantes.HD);
+        spinnerLargeur.setSelection(GConstantes.LD);
+        spinnerPourGagnier.setSelection(GConstantes.PGD);
 
 
 
