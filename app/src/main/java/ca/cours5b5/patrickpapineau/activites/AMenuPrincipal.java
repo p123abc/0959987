@@ -27,7 +27,6 @@ public class AMenuPrincipal extends Activite {
     }
 
 
-
     @Override
     protected void onResume() {
         super.onResume();

@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import ca.cours5b5.patrickpapineau.R;
 
-public class AParametres extends Activite {
+public class AParametres extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
