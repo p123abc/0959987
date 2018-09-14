@@ -9,7 +9,7 @@ import android.widget.Spinner;
 import ca.cours5b5.patrickpapineau.R;
 import ca.cours5b5.patrickpapineau.global.GConstantes;
 
-public class VParametres extends ConstraintLayout{
+public class VParametres extends Vue{
 
     public VParametres(Context context) {
         super(context);

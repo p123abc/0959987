@@ -9,21 +9,27 @@ import android.widget.Button;
 
 import ca.cours5b5.patrickpapineau.R;
 
-public class AMenuPrincipal extends AppCompatActivity {
+public class AMenuPrincipal extends Activite {
 
-    static {
+    /*static {
         Class metaDonnees = AMenuPrincipal.class;
         Log.d(metaDonnees.class.getSimpleName());
-    }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amenuprincipal);
-        //Log.d("MonEtiquette",this.getResources().getString(R.string.IDENTIFIANT)+" "+this.getResources().getString(R.string.ORIENTATION));
-
+        Log.d("MonEtiquette",this.getResources().getString(R.string.IDENTIFIANT)+" "+this.getResources().getString(R.string.ORIENTATION));
+        Log.d("testActivite", "testCreate");
         // ICI EST-CE QUE LA VUE EST CRÉÉE??
 
+    }
+
+    @Override
+    public void logStatic() {
+        Class metaDonnees = Activite.class;
+        Log.d("testActivite", metaDonnees.getSimpleName());
     }
 
     @Override
@@ -31,6 +37,8 @@ public class AMenuPrincipal extends AppCompatActivity {
         super.onResume();
 
         // ICI LA VUE EXISTE
+
+        Log.d("testActivite", "testResume");
 
         Button buttonParametres = this.findViewById(R.id.button_AParametres);
 
