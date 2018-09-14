@@ -15,6 +15,8 @@ public class AMenuPrincipal extends Activite {
         Class metaDonnees = AMenuPrincipal.class;
         Log.d(metaDonnees.class.getSimpleName());
     }*/
+    // comment pour test si j suis sa branche temps
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
