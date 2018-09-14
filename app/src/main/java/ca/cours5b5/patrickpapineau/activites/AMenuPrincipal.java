@@ -26,11 +26,7 @@ public class AMenuPrincipal extends Activite {
 
     }
 
-    @Override
-    public void logStatic() {
-        Class metaDonnees = Activite.class;
-        Log.d("testActivite", metaDonnees.getSimpleName());
-    }
+
 
     @Override
     protected void onResume() {
