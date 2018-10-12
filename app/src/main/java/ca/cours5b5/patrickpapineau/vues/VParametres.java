@@ -3,13 +3,29 @@ package ca.cours5b5.patrickpapineau.vues;
 import android.content.Context;
 import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import ca.cours5b5.patrickpapineau.R;
-import ca.cours5b5.patrickpapineau.global.GConstantes;
+import java.util.List;
 
-public class VParametres extends Vue{
+import ca.cours5b5.patrickpapineau.R;
+import ca.cours5b5.patrickpapineau.modeles.MParametres;
+
+
+public class VParametres extends Vue {
+
+    static{
+
+        Log.d("Atelier04", VParametres.class.getSimpleName() + "::static");
+
+    }
+
+    private Spinner spinnerHauteur;
+    private Spinner spinnerLargeur;
+    private Spinner spinnerPourGagner;
 
     public VParametres(Context context) {
         super(context);
@@ -24,38 +40,122 @@ public class VParametres extends Vue{
     }
 
     @Override
-    public void onFinishInflate(){
+    protected void onFinishInflate() {
         super.onFinishInflate();
 
-        Spinner spinnerHauteur = this.findViewById(R.id.spinnerHauteur);
-        Spinner spinnerLargeur = this.findViewById(R.id.spinnerLargeur);
-        Spinner spinnerPourGagnier = this.findViewById(R.id.spinnerPourGagnier);
+        initialiser();
+        afficherLesChoix();
+    }
 
-        ArrayAdapter<Integer> adapterHauteur = new ArrayAdapter<>(this.getContext(), R.layout.support_simple_spinner_dropdown_item);
-        ArrayAdapter<Integer> adapterLargeur = new ArrayAdapter<>(this.getContext(), R.layout.support_simple_spinner_dropdown_item);
-        ArrayAdapter<Integer> adapterPG = new ArrayAdapter<>(this.getContext(), R.layout.support_simple_spinner_dropdown_item);
+    private void initialiser(){
+        spinnerHauteur = this.findViewById(R.id.spinner_hauteur);
+        spinnerLargeur = this.findViewById(R.id.spinner_largeur);
+        spinnerPourGagner = this.findViewById(R.id.spinner_pour_gagner);
 
-        spinnerHauteur.setAdapter(adapterHauteur);
-        spinnerLargeur.setAdapter(adapterLargeur);
-        spinnerPourGagnier.setAdapter(adapterPG);
+        initialiserSpinner(spinnerHauteur);
+        initialiserSpinner(spinnerLargeur);
+        initialiserSpinner(spinnerPourGagner);
 
-        for (int i = GConstantes.HMIN; i<=GConstantes.HMAX; i++){
-            adapterHauteur.add(i);
+        installerListeners();
+    }
+
+    private void initialiserSpinner(Spinner spinner){
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(getContext(), R.layout.support_simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+    }
+
+    private void installerListeners() {
+        installerListenerHauteur();
+        installerListenerLargeur();
+        installerListenerPourGagner();
+    }
+
+    private void installerListenerHauteur(){
+        spinnerHauteur.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int leChoix = (int) parent.getAdapter().getItem(position);
+
+                MParametres.instance.setHauteur(leChoix);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
+
+    private void installerListenerLargeur(){
+        spinnerLargeur.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int leChoix = (int) parent.getAdapter().getItem(position);
+
+                MParametres.instance.setLargeur(leChoix);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
+
+    private void installerListenerPourGagner(){
+        spinnerPourGagner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int leChoix = (int) parent.getAdapter().getItem(position);
+
+                MParametres.instance.setPourGagner(leChoix);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
+
+    private void afficherLesChoix(){
+        afficherChoixHauteur();
+        afficherChoixLargeur();
+        afficherChoixPourGagner();
+    }
+
+    private void afficherChoixHauteur(){
+        mettreAJourSpinner(spinnerHauteur,
+                MParametres.instance.getChoixHauteur(),
+                MParametres.instance.getHauteur());
+    }
+
+    private void afficherChoixLargeur(){
+        mettreAJourSpinner(spinnerLargeur,
+                MParametres.instance.getChoixLargeur(),
+                MParametres.instance.getLargeur());
+    }
+
+    private void afficherChoixPourGagner(){
+        mettreAJourSpinner(spinnerPourGagner,
+                MParametres.instance.getChoixPourGagner(),
+                MParametres.instance.getPourGagner());
+    }
+
+    private void mettreAJourSpinner(Spinner spinner, List<Integer> choix, int selectionCourante){
+        ArrayAdapter<Integer> adapter = (ArrayAdapter<Integer>) spinner.getAdapter();
+        adapter.clear();
+
+        for(int i=0; i < choix.size(); i++){
+            int leChoix = choix.get(i);
+            adapter.add(leChoix);
+
+            if(leChoix == selectionCourante){
+                spinner.setSelection(i);
+            }
         }
-
-        for (int i = GConstantes.LMIN; i<=GConstantes.LMAX; i++){
-            adapterLargeur.add(i);
-        }
-
-        for (int i = GConstantes.PGMIN; i<=GConstantes.PGMAX; i++){
-            adapterPG.add(i);
-        }
-
-        spinnerHauteur.setSelection(GConstantes.HD);
-        spinnerLargeur.setSelection(GConstantes.LD);
-        spinnerPourGagnier.setSelection(GConstantes.PGD);
-
-
-
     }
 }

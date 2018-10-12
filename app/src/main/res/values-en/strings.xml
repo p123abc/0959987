@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PatrickPapineau</string>
-    <string name="IDENTIFIANT">Hello</string>
-    <string name="lHauteur">Height:</string>
-    <string name="lLargeur">Width:</string>
-    <string name="lPourGagnier">To win:</string>
+
+
+    <string name="bonjour">Hello!</string>
+    <string name="paysage">landscape</string>
+
+    <string name="hauteur">Height: </string>
+    <string name="largeur">Width: </string>
+    <string name="pour_gagner">To win: </string>
+
+    <string name="parametres">Parameters</string>
+
 </resources>
