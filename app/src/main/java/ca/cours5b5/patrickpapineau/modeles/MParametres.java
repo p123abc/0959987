@@ -23,6 +23,10 @@ public class MParametres extends Modele {
     }
 
     @AttributSerialisable
+    public MParametresPartie parametresPartie;
+    private String __parametresPartie = "parametresPartie";
+
+    @AttributSerialisable
     public Integer hauteur;
     private final String __hauteur = "hauteur";
 
@@ -59,6 +63,11 @@ public class MParametres extends Modele {
     public List<Integer> getChoixPourGagner(){
         return choixPourGagner;
     }
+
+    public MParametresPartie getParametresPartie(){
+        return parametresPartie;
+    }
+
 
     public Integer getHauteur() {
         return hauteur;
