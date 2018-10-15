@@ -18,13 +18,13 @@ public class MParametresPartie extends Modele{
     @AttributSerialisable
     public Integer pourGagner;
     protected final String __pourGagner = "pourGagner";
-
+    //TODO
     public static MParametresPartie aPartirMParametres(MParametres mParametres){
-
+        return  cloner(mParametres);
     }
-
+    //TODO
     public MParametresPartie cloner(){
-
+        return null;
     }
 
     public MParametresPartie() {
