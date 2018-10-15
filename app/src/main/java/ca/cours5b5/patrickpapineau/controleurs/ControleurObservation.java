@@ -3,6 +3,8 @@ package ca.cours5b5.patrickpapineau.controleurs;
 import java.util.Map;
 
 import ca.cours5b5.patrickpapineau.controleurs.interfaces.ListenerObservateur;
+import ca.cours5b5.patrickpapineau.modeles.MParametres;
+import ca.cours5b5.patrickpapineau.modeles.MParametresPartie;
 import ca.cours5b5.patrickpapineau.modeles.MPartie;
 import ca.cours5b5.patrickpapineau.modeles.Modele;
 
@@ -19,7 +21,25 @@ public class ControleurObservation {
 
     public static void observerModele(String nomModele, final ListenerObservateur listenerObservateur){
 
+        if(nomModele.equals(MPartie.class.getSimpleName())){
 
+
+
+            observation.put(partie,listenerObservateur);
+
+            listenerObservateur.reagirNouveauModele(partie);
+
+
+        }else if(nomModele.equals(MParametres.class.getSimpleName())){
+
+
+
+            observation.put(MParametres.instance,listenerObservateur);
+
+            listenerObservateur.reagirNouveauModele(MParametres.instance);
+
+
+        }
 
     }
 

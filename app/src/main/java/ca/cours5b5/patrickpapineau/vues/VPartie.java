@@ -5,24 +5,26 @@ import android.util.AttributeSet;
 
 import ca.cours5b5.patrickpapineau.modeles.MPartie;
 
-public class VPartie {
+public class VPartie extends Vue {
 
     private VGrille grille;
-    //TODO
+
     public VPartie(Context context){
-
+        super(context);
     }
-    //TODO
+
     public VPartie (Context context, AttributeSet attrs){
-
+        super(context, attrs);
     }
-    //TODO
-    public VPartie (Context context, AttributeSet attrs, int defStyleAttr){
 
+    public VPartie (Context context, AttributeSet attrs, int defStyleAttr){
+        super(context, attrs, defStyleAttr);
     }
     //TODO
     @Override
     protected void onFinishInflate(){
+        super.onFinishInflate();
+
 
     }
     //TODO
