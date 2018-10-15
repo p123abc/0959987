@@ -54,9 +54,15 @@ public class VGrille {
     }
 
     //TODO
-    private LayoutParams getMiseEnPageEntete(int colonne){
+    private GridLayout.LayoutParams getMiseEnPageEntete(int colonne){
 
     }
+    //TODO
+    private void ajouterCase(int hauteur, int largeur){
 
+    }
+    //TODO
+    private GridLayout.LayoutParams getMiseEnPageCase(int rangee, int colonne){
 
+    }
 }
