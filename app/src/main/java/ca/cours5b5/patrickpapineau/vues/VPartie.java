@@ -3,7 +3,10 @@ package ca.cours5b5.patrickpapineau.vues;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import ca.cours5b5.patrickpapineau.controleurs.ControleurObservation;
+import ca.cours5b5.patrickpapineau.controleurs.interfaces.ListenerObservateur;
 import ca.cours5b5.patrickpapineau.modeles.MPartie;
+import ca.cours5b5.patrickpapineau.modeles.Modele;
 
 public class VPartie extends Vue {
 
@@ -20,21 +23,24 @@ public class VPartie extends Vue {
     public VPartie (Context context, AttributeSet attrs, int defStyleAttr){
         super(context, attrs, defStyleAttr);
     }
-    //TODO
+
     @Override
     protected void onFinishInflate(){
         super.onFinishInflate();
-
-
     }
-    //TODO
+
     private void observerPartie(){
 
+        ControleurObservation.observerModele(MPartie.class.getSimpleName(), new ListenerObservateur() {
+                    @Override
+                    public void reagirChangementAuModele(Modele modele) {
+                        initialiserGrille(getPartie(modele));
+                    }
+                });
     }
-    //TODO
-    private MPartie getPartie(){
 
-        return null;
+    private MPartie getPartie(Modele modele){
+        return (MPartie) modele;
     }
 
     //TODO

@@ -59,7 +59,7 @@ public class MParametresPartie extends Modele{
     public void setPourGagner(int pourGagner){
         this.pourGagner = pourGagner;
     }
-    //TODO
+
     @Override
     public void aPartirObjectJson(Map<String, Object> objetJson)throws ErreurSerialisation{
 
@@ -84,13 +84,13 @@ public class MParametresPartie extends Modele{
 
         }
     }
-    //TODO
+
     @Override
     public Map<String, Object> enObjetJson() throws ErreurSerialisation{
         Map<String, Object> objectJson = new HashMap<>();
-        objectJson.put(__hauteur, hauteur);
-        objectJson.put(__largeur, largeur);
-        objectJson.put(__pourGagner, pourGagner);
+        objectJson.put(__hauteur, hauteur.toString());
+        objectJson.put(__largeur, largeur.toString());
+        objectJson.put(__pourGagner, pourGagner.toString());
 
         return objectJson;
     }
