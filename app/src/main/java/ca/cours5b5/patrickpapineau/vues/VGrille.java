@@ -5,52 +5,69 @@ import android.text.Layout;
 import android.util.AttributeSet;
 import android.widget.GridLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class VGrille {
-    //TODO
+public class VGrille extends GridLayout {
+    
     public VGrille(Context context){
-
+        super(context);
     }
 
-    //TODO
+
     public VGrille(Context context, AttributeSet attrs){
-
+        super(context, attrs);
     }
 
-    //TODO
-    public VGrille(Context context, AttributeSet attrs, int defStyleAttr){
 
+    public VGrille(Context context, AttributeSet attrs, int defStyleAttr){
+        super(context, attrs, defStyleAttr);
     }
 
     private int nombreRangees;
 
     private List<VEntete> entetes;
 
-    private VCase[][] lesCases;
+    //private VCase[][] lesCases;
 
     // Ou avec des liste (voir l énoncé de l atelier 6 dans Classe VGrille)
 
-    //TODO
+    private class Colonne extends ArrayList<VCase>{ }
+    private List<Colonne> colonnesDeCases;
+
+
     @Override
     protected void onFinishInflate(){
-
+        super.onFinishInflate();
     }
-    //TODO
+
     void creerGrille(int hauteur, int largeur){
-
+        initialiserColonnes(largeur);
+        ajouterEnTetes(largeur);
+        ajouterCase(hauteur, largeur);
     }
 
-    //TODO
-    private void initialiserTableauDeCase(int hauteur, int largeur){
 
-    }
+    // private void initialiserTableauDeCase(int hauteur, int largeur){ }
 
     // Ou avec des liste (voir l énoncé de l atelier 6 dans Classe VGrille)
 
-    //TODO
-    private void ajouterEnTetes(int largeur){
 
+    private void initialiserColonnes (int largeur) {
+        colonnesDeCases = new ArrayList<>();
+        for (int i = 0; i < largeur; i++){
+            colonnesDeCases.add(new Colonne());
+        }
+    }
+
+
+    private void ajouterEnTetes(int largeur){
+        VEntete entete = new VEntete(super.getContext());
+        entetes = new ArrayList<>();
+        for(int i = 0; i < largeur; i++){
+            entetes.add(i, entete);
+
+        }
     }
 
     //TODO
