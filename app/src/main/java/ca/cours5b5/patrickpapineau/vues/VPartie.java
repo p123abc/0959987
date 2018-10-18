@@ -45,6 +45,6 @@ public class VPartie extends Vue {
 
     //TODO
     private void initialiserGrille(MPartie partie){
-
+        grille = new VGrille(this.getContext());
     }
 }
