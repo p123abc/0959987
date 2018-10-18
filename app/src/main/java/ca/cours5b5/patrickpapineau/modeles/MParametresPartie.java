@@ -1,5 +1,6 @@
 package ca.cours5b5.patrickpapineau.modeles;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import ca.cours5b5.patrickpapineau.exceptions.ErreurSerialisation;
@@ -58,16 +59,40 @@ public class MParametresPartie extends Modele{
     public void setPourGagner(int pourGagner){
         this.pourGagner = pourGagner;
     }
-
+    //TODO
     @Override
-    public void aPartirObjectJson(Map<String, Object> objectJson)throws ErreurSerialisation{
+    public void aPartirObjectJson(Map<String, Object> objetJson)throws ErreurSerialisation{
 
+        for (Map.Entry<String, Object> entry : objetJson.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if(key.equals(__hauteur)) {
+
+                hauteur = Integer.valueOf(value.toString());
+
+            } else if(key.equals(__largeur)){
+
+                largeur = Integer.valueOf(value.toString());
+
+            }else if (key.equals(__pourGagner)){
+
+                pourGagner = Integer.valueOf(value.toString());
+
+            }
+
+
+        }
     }
-
+    //TODO
     @Override
     public Map<String, Object> enObjetJson() throws ErreurSerialisation{
+        Map<String, Object> objectJson = new HashMap<>();
+        objectJson.put(__hauteur, hauteur);
+        objectJson.put(__largeur, largeur);
+        objectJson.put(__pourGagner, pourGagner);
 
-        return null;
+        return objectJson;
     }
 
 }
