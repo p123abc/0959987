@@ -1,22 +1,23 @@
 package ca.cours5b5.patrickpapineau.vues;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 
-public class VCase {
-    //TODO
+public class VCase extends AppCompatButton {
+
     public VCase (Context context){
-
+        super(context);
     }
 
-    //TODO
+
     public VCase (Context context, AttributeSet attrs){
-
+        super(context, attrs);
     }
 
-    //TODO
-    public VCase (Context context, AttributeSet attrs, int defStyleAttr){
 
+    public VCase (Context context, AttributeSet attrs, int defStyleAttr){
+        super(context, attrs, defStyleAttr);
     }
 
     //TODO
