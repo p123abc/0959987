@@ -20,15 +20,19 @@ public class MParametresPartie extends Modele{
     protected final String __pourGagner = "pourGagner";
     //TODO
     public static MParametresPartie aPartirMParametres(MParametres mParametres){
-        return  cloner(mParametres);
+        MParametresPartie mParametresPartie = mParametres.getParametresPartie().cloner();
+        return  mParametresPartie;
     }
     //TODO
     public MParametresPartie cloner(){
-        return null;
+        MParametresPartie clone = new MParametresPartie(this.getHauteur(),this.getLargeur(),this.getPourGagner());
+        return clone;
     }
 
-    public MParametresPartie() {
-
+    public MParametresPartie(int hauteur, int largeur, int pourGagner) {
+        this.setHauteur(hauteur);
+        this.setLargeur(largeur);
+        this.setPourGagner(pourGagner);
     }
 
     public Integer getHauteur(){
@@ -47,11 +51,11 @@ public class MParametresPartie extends Modele{
         this.hauteur = hauteur;
     }
 
-    public void setLargeur(){
+    public void setLargeur(int largeur){
         this.largeur = largeur;
     }
 
-    public void setPourGagner(){
+    public void setPourGagner(int pourGagner){
         this.pourGagner = pourGagner;
     }
 
