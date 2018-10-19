@@ -27,6 +27,7 @@ public class VPartie extends Vue {
     @Override
     protected void onFinishInflate(){
         super.onFinishInflate();
+        this.grille = findViewById(R.);
     }
 
     private void observerPartie(){

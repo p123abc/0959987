@@ -33,7 +33,7 @@ public class AMenuPrincipal extends Activite {
             }
         });
         Button bouton2 = this.findViewById(R.id.button2);
-        bouton.setOnClickListener(new View.OnClickListener() {
+        bouton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 transitionPartie();

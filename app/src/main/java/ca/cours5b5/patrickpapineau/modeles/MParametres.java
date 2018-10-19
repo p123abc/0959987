@@ -125,29 +125,8 @@ public class MParametres extends Modele {
     public void aPartirObjetJson(Map<String, Object> objetJson) throws ErreurSerialisation{
         for(Map.Entry<String, Object> entry : objetJson.entrySet()){
 
-            String chaineValeur = (String) entry.getValue();
-
-            switch (entry.getKey()){
-
-                case __hauteur:
-
-                    hauteur = Integer.valueOf(chaineValeur);
-                    break;
-
-                case __largeur:
-
-                    largeur = Integer.valueOf(chaineValeur);
-                    break;
-
-
-                case __pourGagner:
-
-                    largeur = Integer.valueOf(chaineValeur);
-                    break;
-
-                default:
-
-                    throw new ErreurSerialisation("Attribut inconnu: " + entry.getKey());
+            if(entry.getKey().equals(__parametresPartie)){
+                this.parametresPartie.aPartirObjetJson((Map<String, Object>) entry.getValue());
             }
         }
     }
@@ -157,9 +136,8 @@ public class MParametres extends Modele {
     public Map<String, Object> enObjetJson() throws ErreurSerialisation {
         Map<String, Object> objetJson = new HashMap<>();
 
-        objetJson.put(__hauteur, hauteur.toString());
-        objetJson.put(__largeur, largeur.toString());
-        objetJson.put(__pourGagner, pourGagner.toString());
+        objetJson.put(__parametresPartie, this.getParametresPartie());
+
 
         return objetJson;
 

@@ -16,17 +16,19 @@ public class MPartie extends Modele{
         this.parametres = parametres;
     }
 
-    public MParametresPartie getParametres({
+    public MParametresPartie getParametres(){
         return parametres;
     }
 
+
+
     @Override
-    public void aPartirObjectJson(Map<String, Object> objectJson)throws ErreurSerialisation{
-        //Inutilisé pour l'intant
+    public void aPartirObjetJson(Map<String, Object> objetJson) throws ErreurSerialisation {
+
     }
 
     @Override
-    public Map<String, Object> enObjectJson()throws ErreurSerialisation{
-        //Inutilisé pour l'intant
+    public Map<String, Object> enObjetJson() throws ErreurSerialisation {
+        return null;
     }
 }

@@ -23,6 +23,8 @@ public class VEntete extends AppCompatButton{
     private int colonne;
     //TODO
     public VEntete(Context context, int colonne){
-
+        super(context);
+        this.colonne = colonne;
+        this.setText(colonne);
     }
 }

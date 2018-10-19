@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ca.cours5b5.patrickpapineau.vues.VPartie xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/textView"
@@ -12,4 +12,13 @@
         android:text="pas fini"
         tools:layout_editor_absoluteX="162dp"
         tools:layout_editor_absoluteY="245dp" />
-</android.support.constraint.ConstraintLayout>
+
+    <ca.cours5b5.patrickpapineau.vues.VGrille
+        android:id="@+id/grille"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        >
+
+    </ca.cours5b5.patrickpapineau.vues.VGrille>
+</ca.cours5b5.patrickpapineau.vues.VPartie>

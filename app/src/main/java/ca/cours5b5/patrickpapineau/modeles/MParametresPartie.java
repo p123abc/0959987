@@ -60,28 +60,36 @@ public class MParametresPartie extends Modele{
         this.pourGagner = pourGagner;
     }
 
+
+
     @Override
-    public void aPartirObjectJson(Map<String, Object> objetJson)throws ErreurSerialisation{
+    public void aPartirObjetJson(Map<String, Object> objetJson) throws ErreurSerialisation {
+        for(Map.Entry<String, Object> entry : objetJson.entrySet()){
 
-        for (Map.Entry<String, Object> entry : objetJson.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
+            String chaineValeur = (String) entry.getValue();
 
-            if(key.equals(__hauteur)) {
+            switch (entry.getKey()){
 
-                hauteur = Integer.valueOf(value.toString());
+                case __hauteur:
 
-            } else if(key.equals(__largeur)){
+                    hauteur = Integer.valueOf(chaineValeur);
+                    break;
 
-                largeur = Integer.valueOf(value.toString());
+                case __largeur:
 
-            }else if (key.equals(__pourGagner)){
+                    largeur = Integer.valueOf(chaineValeur);
+                    break;
 
-                pourGagner = Integer.valueOf(value.toString());
 
+                case __pourGagner:
+
+                    largeur = Integer.valueOf(chaineValeur);
+                    break;
+
+                default:
+
+                    throw new ErreurSerialisation("Attribut inconnu: " + entry.getKey());
             }
-
-
         }
     }
 
