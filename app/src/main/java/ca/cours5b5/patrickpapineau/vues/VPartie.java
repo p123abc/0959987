@@ -7,6 +7,7 @@ import ca.cours5b5.patrickpapineau.controleurs.ControleurObservation;
 import ca.cours5b5.patrickpapineau.controleurs.interfaces.ListenerObservateur;
 import ca.cours5b5.patrickpapineau.modeles.MPartie;
 import ca.cours5b5.patrickpapineau.modeles.Modele;
+import ca.cours5b5.patrickpapineau.R;
 
 public class VPartie extends Vue {
 
@@ -27,7 +28,8 @@ public class VPartie extends Vue {
     @Override
     protected void onFinishInflate(){
         super.onFinishInflate();
-        this.grille = findViewById(R.);
+        this.grille = findViewById(R.id.grille);
+        observerPartie();
     }
 
     private void observerPartie(){

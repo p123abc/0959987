@@ -1,5 +1,6 @@
 package ca.cours5b5.patrickpapineau.controleurs;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import ca.cours5b5.patrickpapineau.controleurs.interfaces.ListenerObservateur;
@@ -16,7 +17,8 @@ public class ControleurObservation {
     private static MPartie partie;
 
     static {
-
+        partie = new MPartie(MParametres.instance.getParametresPartie());
+        observation = new HashMap<>();
     }
 
     public static void observerModele(String nomModele, final ListenerObservateur listenerObservateur){
