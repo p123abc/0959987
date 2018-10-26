@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ca.cours5b5.patrickpapineau">
+    package="ca.cours5b5.PatrickPapineau">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activites.AParametres">
-
+        </activity>
+        <activity android:name=".activites.APartie">
         </activity>
         <activity android:name=".activites.AMenuPrincipal">
             <intent-filter>
@@ -18,9 +19,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-        <activity android:name=".activites.APartie">
 
         </activity>
     </application>
