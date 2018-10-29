@@ -136,4 +136,19 @@ public final class ControleurModeles {
         }
     }
 
+    public final class ControleurModeles {
+        /******* ajouts aux méthodes *****/
+
+        private static String getCheminSauvegarde(String nomModeles)
+            /*
+            Le chemin est la forme:
+
+            nomModeles/idUsager
+
+            par exemple
+
+            MPartie/T1m8GhdljeHSAJFN6nnEg1
+             */
+    }
+
 }

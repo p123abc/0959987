@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "858448915282",
+    "firebase_url": "https://patrickpapineau-5c173.firebaseio.com",
+    "project_id": "patrickpapineau-5c173",
+    "storage_bucket": "patrickpapineau-5c173.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858448915282:android:50cbd1600a039601",
+        "android_client_info": {
+          "package_name": "ca.cours5b5.PatrickPapineau"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "858448915282-occ6bjse4ugmqjkueeaq1q4p7ubf2m5g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.cours5b5.PatrickPapineau",
+            "certificate_hash": "8c59664c2ab8134da7a71ae6992ef4bbe6a9458e"
+          }
+        },
+        {
+          "client_id": "858448915282-gbq9hggk86fnpt1v588ei2ovq8culvu0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMnciw1cftxLCFFMn3QTnYoDqJ5L27GNI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "858448915282-gbq9hggk86fnpt1v588ei2ovq8culvu0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
