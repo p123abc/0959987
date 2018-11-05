@@ -136,10 +136,10 @@ public final class ControleurModeles {
         }
     }
 
-    public final class ControleurModeles {
+
         /******* ajouts aux méthodes *****/
 
-        private static String getCheminSauvegarde(String nomModeles)
+        private static String getCheminSauvegarde(String nomModeles){
             /*
             Le chemin est la forme:
 
@@ -149,6 +149,8 @@ public final class ControleurModeles {
 
             MPartie/T1m8GhdljeHSAJFN6nnEg1
              */
-    }
+        }
+
+
 
 }
